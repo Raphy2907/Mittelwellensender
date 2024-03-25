@@ -1,0 +1,4 @@
+ffmpeg -i "https://dispatcher.rndfnk.com/swr/swr3/live/mp3/128/stream.mp3" -ar 16000 -ac 1 -f f32le -filter:a "volume=2.0, lowpass=4500" - | nc -u 127.0.0.1 5004 &
+ffmpeg -i "https://dispatcher.rndfnk.com/swr/swr1/bw/mp3/128/stream.mp3" -ar 16000 -ac 1 -f f32le -filter:a "volume=2.0, lowpass=4500" - | nc -u 127.0.0.1 5006 &
+ffmpeg -i "https://dispatcher.rndfnk.com/hr/hr1-sued/mp3/high" -ar 16000 -ac 1 -f f32le -filter:a "volume=2.0, lowpass=4500" - | nc -u 127.0.0.1 5008 &
+ffmpeg -i "https://dispatcher.rndfnk.com/hr/hr3-sued/mp3/high" -ar 16000 -ac 1 -f f32le -filter:a "volume=4.0, lowpass=4500" - | nc -u 127.0.0.1 5010
